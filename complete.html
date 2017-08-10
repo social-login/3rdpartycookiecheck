@@ -2,9 +2,11 @@
 <script>
  if (window.parent) {
 	if (/thirdparty=yes/.test(document.cookie)) {
-		window.parent.postMessage('MM:3PCsupported', '*');
+		//window.parent.postMessage('MM:3PCsupported', '*');
+		window.parent.postMessage(JSON.stringify({'action':'cookie_support','value':'supported'}), '*');
 	} else {
-		window.parent.postMessage('MM:3PCunsupported', '*');
+		//window.parent.postMessage('MM:3PCunsupported', '*');
+		window.parent.postMessage(JSON.stringify({'action':'cookie_support','value':'unsupported'}), '*');
 	}
  }
 </script>
